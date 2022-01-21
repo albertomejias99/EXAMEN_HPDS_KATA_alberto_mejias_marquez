@@ -37,6 +37,24 @@ public class TestFibonacci {
     }
 
 
+    @Test
+    public void test_productFib_with_input_714(){
+        int [] res = fibo.productFib(714);
+        assertArrayEquals(res,new int[] {21,34,1});
+    }
+
+    @Test
+    public void test_productFib_with_input_800(){
+        int [] res = fibo.productFib(800);
+        assertArrayEquals(res,new int[] {34,55,0});
+    }
+
+    @Test
+    public void test_productFib_with_input_1870(){
+        int [] res = fibo.productFib(1870);
+        assertArrayEquals(res,new int[] {34,55,1});
+    }
+    
 
 
 }

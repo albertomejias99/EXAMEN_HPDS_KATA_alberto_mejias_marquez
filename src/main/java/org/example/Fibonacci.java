@@ -13,5 +13,21 @@ public class Fibonacci {
         }
     }
 
-    
+    public int [] productFib(int product){
+        int [] res = new int [3];
+        int n = 0;
+        while(calculateFibonacci(n)*calculateFibonacci(n+1)<= product){
+            if (calculateFibonacci(n)*calculateFibonacci(n+1) == product){
+                res[0] = calculateFibonacci(n);
+                res[1] = calculateFibonacci(n+1);
+                res[2] = 1;
+                return res;
+            }
+            n++;
+        }
+        res[0] = calculateFibonacci(n);
+        res[1] = calculateFibonacci(n+1);
+        res[2] = 0;
+        return res;
+    }
 }
