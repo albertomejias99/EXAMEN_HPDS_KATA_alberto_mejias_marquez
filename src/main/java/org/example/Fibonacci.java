@@ -14,20 +14,21 @@ public class Fibonacci {
     }
 
     public int [] productFib(int product){
-        int [] res = new int [3];
         int n = 0;
+        int fn;
+        int fn1;
         while(calculateFibonacci(n)*calculateFibonacci(n+1)<= product){
-            if (calculateFibonacci(n)*calculateFibonacci(n+1) == product){
-                res[0] = calculateFibonacci(n);
-                res[1] = calculateFibonacci(n+1);
-                res[2] = 1;
-                return res;
+            fn = calculateFibonacci(n);
+            fn1  =calculateFibonacci(n+1);
+            if (checkIfInputIsTheProduct(fn, fn1, product)){
+                return new int [] {fn, fn1, 1};
             }
             n++;
         }
-        res[0] = calculateFibonacci(n);
-        res[1] = calculateFibonacci(n+1);
-        res[2] = 0;
-        return res;
+        return new int [] {calculateFibonacci(n), calculateFibonacci(n+1), 0};
+    }
+
+    private boolean checkIfInputIsTheProduct(int fn, int fn1, int product){
+        return fn*fn1 == product;
     }
 }
